@@ -1,0 +1,29 @@
+{
+  "name": "provify",
+  "version": "0.0.1",
+  "description": "Transform your tape tests to prova",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run-script lint && tap test/*.js",
+    "lint": "eslint **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheAlphaNerd/provify"
+  },
+  "keywords": [
+    "Browserify",
+    "Tape",
+    "Prova"
+  ],
+  "author": "Myles Borins",
+  "license": "MPL V2",
+  "bugs": {
+    "url": "https://github.com/TheAlphaNerd/provify/issues"
+  },
+  "homepage": "https://github.com/TheAlphaNerd/provify",
+  "devDependencies": {
+    "eslint": "^0.8.1",
+    "tap": "^0.4.12"
+  }
+}

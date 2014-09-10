@@ -13,26 +13,27 @@ var contentTap = 'require(\'tap\');';
 var contentTape = 'require(\'tape\');';
 var contentUnrelated = 'require(\'hacktheplanet\');';
 
+var testContent = function (t, content, result) {
+  var expected = result || content;
+  transformTools.runTransform(provify, dummy, {content: content}, function (err, transformed) {
+    if (err) { throw new Error(err); }
+    t.equal(transformed, expected);
+  });
+};
+
+var expectedOutput = 'require(\'prova\');';
+
 test('tap requires should be transformed', function (t) {
   t.plan(1);
-  transformTools.runTransform(provify, dummy, {content: contentTap}, function (err, transformed) {
-    if (err) { throw new Error(err); }
-    t.equal(transformed, 'require(\'prova\');');
-  });
+  testContent(t, contentTap, expectedOutput);
 });
 
 test('tape requires should be transformed', function (t) {
   t.plan(1);
-  transformTools.runTransform(provify, dummy, {content: contentTape}, function (err, transformed) {
-    if (err) { throw new Error(err); }
-    t.equal(transformed, 'require(\'prova\');');
-  });
+  testContent(t, contentTape, expectedOutput);
 });
 
 test('unrelated requires should not be transformed', function (t) {
   t.plan(1);
-  transformTools.runTransform(provify, dummy, {content: contentUnrelated}, function (err, transformed) {
-    if (err) { throw new Error(err); }
-    t.equal(transformed, contentUnrelated);
-  });
+  testContent(t, contentUnrelated);
 });

@@ -25,5 +25,8 @@
   "devDependencies": {
     "eslint": "^0.8.1",
     "tap": "^0.4.12"
+  },
+  "dependencies": {
+    "browserify-transform-tools": "^1.2.1"
   }
 }

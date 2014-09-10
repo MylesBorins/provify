@@ -1,6 +1,6 @@
 {
   "name": "provify",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Transform your tape tests to prova",
   "main": "index.js",
   "scripts": {

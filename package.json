@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/TheAlphaNerd/provify",
   "devDependencies": {
-    "eslint": "^0.8.1",
+    "eslint": "^0.9.2",
     "tap": "^0.4.12"
   },
   "dependencies": {
